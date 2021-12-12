@@ -19,7 +19,11 @@ which would allow cresser to decode the input file.
 
 
 
-## Dependencies
+## Acknowledgements
+
+ * [Cmake code coverage script](https://github.com/bilke/cmake-modules/blob/master/CodeCoverage.cmake)
+ * [Cmake](https://cmake.org/)
+ * [Resources for lz77](https://en.wikipedia.org/wiki/LZ77_and_LZ78)
 
 
 
