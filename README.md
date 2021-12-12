@@ -1,3 +1,6 @@
+[![CMake CI](https://github.com/Gabau/cresser-private/actions/workflows/cmake.yml/badge.svg)](https://github.com/Gabau/cresser-private/blob/master/.github/workflows/cmake.yml)
+
+
 # Cresser
 
 LZ77 Compression ultility project. Cresser is an encoding application that is capable
