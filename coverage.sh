@@ -7,5 +7,5 @@ cd build
 cmake -G Ninja build ../
 ninja
 ninja cresser_coverage
-
+xdg-open cresser_coverage/index.html
 
