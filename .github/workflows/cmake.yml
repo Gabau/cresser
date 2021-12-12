@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    -name: Install lcov
+    - name: Install lcov
       # install lcov for coverage
       run: sudo apt-get install -y lcov
 
