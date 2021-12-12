@@ -1,4 +1,4 @@
-[![CMake CI](https://github.com/Gabau/cresser-private/actions/workflows/cmake.yml/badge.svg)](https://github.com/Gabau/cresser-private/blob/master/.github/workflows/cmake.yml)
+[![CMake CI](https://github.com/Gabau/cresser-private/actions/workflows/cmake.yml/badge.svg)](https://github.com/Gabau/cresser-private/actions/workflows/cmake.yml)
 
 
 # Cresser
