@@ -1,0 +1,11 @@
+The exec() family of functions replaces the current process image
+with a new process image.  The functions described in this manual
+page are layered on top of execve(2).  (See the manual page for
+execve(2) for further details about the replacement of the
+current process image.)
+
+The initial argument for these functions is the name of a file
+that is to be executed.
+
+The functions can be grouped based on the letters following the
+"exec" prefix.

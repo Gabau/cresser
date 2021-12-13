@@ -29,6 +29,7 @@ struct bad_int_values : public std::exception {
 
 
 
+
 lz77_encoding_t::lz77_encoding_t(char endChar,
   uint16_t offset,
   uint16_t length) {
@@ -90,6 +91,10 @@ lz77_encoding_t lz77_encoding_t::from_string(string look_ahead_window,
       if (totest.length() == 1) {
         return lz77_encoding_t(totest[0], 0, 0);
       }
+      if (prefix.length() == 1) {  // short circuit
+        return lz77_encoding_t(prefix[0], 0, 0);
+      }
+      assert(ptr <= encoded_window.length());
       // handle case when the previous prefix is in the sequence
       return lz77_encoding_t(look_ahead_window[i], ptr, prefix.length());
     }
@@ -141,6 +146,7 @@ string lz77_encode(string val) {
     encoded_buffer++;
     start--;
     start += token.length();
+    
   }
 
   return res;
@@ -183,15 +189,10 @@ string lz77_decode(string val) {
       exit(-1);
     }
     // when there is a prefix in the current sliding window.
-    string prefix = res.substr(res.length() - offset, length);
-    res += prefix;
-    int val = res.length();
-    if (prefix.length() != length) {
-      // when there is more to be added
-      int diff = length - prefix.length() - 1;
-      for (int i = val - 1; i < val + diff; i++) {
-        res += res[i];
-      }
+
+    int start = res.length() - offset;
+    for (int i = start; i < start + length; i++) {
+      res += res[i];
     }
     res += token[0];
   }

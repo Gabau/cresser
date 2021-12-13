@@ -27,6 +27,11 @@ const prefix DECODE_ALT("--decode");
 const prefix OUTPUT("-o");
 vector<prefix> prefixes{DECODE, DECODE_ALT, OUTPUT};
 
+
+
+
+
+
 void help_message();
 
 /**
@@ -36,6 +41,8 @@ void help_message();
  */
 int main(int argc, char** argv) {
   
+  
+
   // insufficient arguments
   if (argc == 1) {
     help_message();
@@ -57,9 +64,15 @@ int main(int argc, char** argv) {
   if (decode == -1 && decode_alt == -1) {
     //perform encoding of the input file
     string to_encode = rfrom(inputfile);
-    wrto(filename, lz77_encode(to_encode));
+    string towrite = lz77_encode(to_encode);
+    if (lz77_decode(towrite).compare(to_encode) != 0) {
+      fprintf(stderr, "Encoding is wrong\n");
+    }
+    wrto(filename, towrite);
   } else {
     string to_decode = rfrom(inputfile);
+    string towrite = lz77_decode(to_decode);
+    
     wrto(filename, lz77_decode(to_decode));
   }
   
