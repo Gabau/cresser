@@ -63,6 +63,7 @@ namespace ht {
       this->head = first; 
       this->tail = second;
     }
+    virtual ~hashed_pair() {}
 
     bool isEmpty() override {return false;};
 
@@ -95,7 +96,12 @@ namespace ht {
   class hashtable {
   public:
     hashtable();
-    virtual ~hashtable() {free(array);}
+    virtual ~hashtable() {
+      for (int i = 0; i < maxsize; i++) {
+        delete array[i];
+      }
+      delete[] array;
+    }
     void add(K key, V value);
     V search(K key);
     // not implemented
@@ -154,6 +160,8 @@ namespace ht {
         for (int i = 0; i < maxsize; i++) {
           int address = (i + hash) % maxsize;
           if (array[address]->isEmpty()) {
+            // delete current empty pair
+            delete array[address];
             // Entry can be used
             array[address] = element;
             break;
@@ -171,6 +179,8 @@ namespace ht {
     for (int i = 0; i < maxsize; i++) {
       int address = (i + hash) % maxsize;
       if (array[address]->isEmpty()) {
+        // delete current empty pair at location
+        delete array[address];
         // Entry can be used
         array[address] = toAdd;
         return;
