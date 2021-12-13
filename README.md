@@ -20,6 +20,17 @@ which would allow cresser to decode the input file.
 
 ## Installation
 
+### Using cmake
+
+Do the following in an empty folder if possible. Requires cmake and git.
+
+```bash
+# Clone the repo
+git clone --depth 1 --branch master https://github.com/Gabau/cresser.git
+mkdir -p build
+cd build
+cmake ../cresser
+```
 
 
 ## Acknowledgements
