@@ -2,16 +2,19 @@
 
 # use to generate coverage report
 
+rm -r build
+
 mkdir -p build
 cd build
 cmake -G Ninja build ../
 ninja
 ninja cresser_coverage
-# xdg-open cresser_coverage/index.html
+xdg-open cresser_coverage/index.html
 
 # Used to generate codecov report
+# cd build
 
-
+make cresser_coverage
 
 lcov --directory . --capture --output-file coverage.info
 lcov --remove coverage.info '/usr/*' "${HOME}"'/.cache/*' --output-file coverage.info
