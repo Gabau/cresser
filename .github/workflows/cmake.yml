@@ -44,7 +44,7 @@ jobs:
 
     - name: Upload coverage to codecov
       working-directory: ${{github.workspace}}/build
-       uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v2
       with:
         fail_ci_if_error: true
         name: codecov-umbrella
