@@ -1,5 +1,4 @@
 [![CMake CI](https://github.com/Gabau/cresser-private/actions/workflows/cmake.yml/badge.svg)](https://github.com/Gabau/cresser-private/actions/workflows/cmake.yml)
-
 [![codecov](https://codecov.io/gh/Gabau/cresser/branch/master/graph/badge.svg?token=QIYON33EEB)](https://codecov.io/gh/Gabau/cresser)
 
 # Cresser
