@@ -13,7 +13,6 @@
 #include <iostream>
 #include <vector>
 #include "operations.h"
-#include "encoder.h"
 #include "lz77encoder.h"
 #include "parser.h"
 

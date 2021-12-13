@@ -12,7 +12,6 @@
 #define LZ77_ENCODER_H
 
 #include <iostream>
-#include "encoder.h"
 
 using namespace std;
 
